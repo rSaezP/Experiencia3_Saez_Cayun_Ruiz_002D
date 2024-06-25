@@ -1,0 +1,590 @@
+html {
+    box-sizing: border-box;
+    font-size: 20.5%; /* 1 rem = 10px */    
+}
+
+
+
+body{
+    background-color: rgb(238, 198, 204);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin :0;
+}
+
+main{
+    flex:1;
+}
+h1{
+   color: #dbb5cd;
+   text-align: center;
+}
+/* Estilos para el menú de navegación */
+.navegacion {
+    background-color: #fff; /* Fondo blanco para el menú */
+    padding: 10px; /* Espaciado interno para los enlaces */
+    text-align:right;
+}
+
+.navegacion__enlace {
+    text-decoration: none; /* sin subrayado en enlace */
+    color: #dbb5cd; /* Color de texto  */
+    font-family: 'Shadows Into Light', sans-serif; /* Fuente de la letra */
+    font-size: 20px; /* Tamaño de la letra */
+    font-style: italic;/*cursiva*/
+    margin-right: 20px; /* espacio a la derecha */
+}
+
+
+.navegacion__enlace:hover
+
+ {
+    color: rgb(199, 151, 184); /* Cambia de color al pasar el mouse */
+}
+.navegacion__enlace.contactanos{
+    color: #dbb5cd;
+}
+
+.titulo__texto {
+    font-family: 'Shadows Into Light', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: #dba3ba; /* Color del texto del título */
+    background-color: transparent; /* Fondo del título */
+    padding: 10px; /* Espaciado interno del título */
+    border-radius: 5px; /* Bordes redondeados para el título */
+}
+
+
+.titulo__texto::before,
+.titulo__texto::after {
+    content: "\2665"; /* Código Unicode del corazón negro */
+    color: rgb(216, 174, 194); /* Color de los corazones */
+    font-size: 20px; /* Tamaño de los corazones */
+}
+.centrar {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.carrusel-central {
+    display: flex;
+    margin: 0 auto;
+    width: 40%;
+    height: auto;
+}
+.texto{
+    padding-left: 2cm;
+    max-width: 30cm;
+    display: flex;
+    font-family: 'Shadows Into Light', sans-serif;
+    font-size: 20px;
+    color: white;
+    margin: 0 auto;
+}
+.carousel-item img {
+    width: 40%; 
+    height: 30%
+    margin: 0 auto;
+}
+.descripcion {
+    font-family: 'Shadows Into Light', sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    color: white; /* Color de texto de los estilos CSS */
+    text-align: center; /*centrar a la izquierda*/
+    opacity : 0 ; 
+    transition : opacity 2s ease; 
+    line-height:1.6;
+}
+
+.titulo__quienes-somos,
+.titulo__mision,
+.titulo__vision{
+    font-family: 'Shadows Into Light', sans-serif;
+    font-size: 40px; /* Tamaño del título */
+    color: white; /* Color de texto del título */
+    text-align: center; /* Centrar el título */
+    margin-bottom: 5px;
+}
+
+.fadeIn{
+    opacity:1;
+}
+
+
+
+.footer {
+    background-color: white;
+    color: #dba3ba;
+    padding: 20px 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+
+.footer-text {
+    font-size: 14px;
+    margin: 0 10px;
+
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+  
+}
+
+.social-icons a
+ {
+    color: #dba3ba;
+    font-size: 40px;
+    margin-right: 30px;
+}
+
+
+
+
+
+
+.col img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+.navegacion__fotos:hover img {
+    filter: brightness(80%); /* Cambia el brillso al 80% al pasar el mouse */
+}
+.video-link {
+   
+    font-family: 'Ubuntu Sans', sans-serif;
+    font-size: 20px; /* Tamaño del texto */
+    color:white; /* Color del texto */
+    text-decoration: none; /* sin efectos en el texto*/
+
+    
+
+}
+
+.video-container {
+  
+   padding:10px;
+   background-color: rgba(255, 255, 255, 0.3);
+   border-radius: 10px;
+   max-width: 100%;
+}
+
+.imagen-contenedor {
+    text-align: center;
+    max-width: 80%;
+    max-height: 80%;
+    height: auto;
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+    border-radius: 20px; /* Bordes redondeados */
+}
+
+.overlay {
+    position:relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0); /* Blanco con opacidad 0 */
+    transition: background-color 0.3s ease; /* Transición suave */
+    border-radius: 20px; /* Bordes redondeados */
+
+}
+.contenido-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.mision-vision {
+    display: flex;
+    align-items: center;
+}
+.titulo__vision,
+.titulo__mision {
+    margin-bottom: 1; /* Eliminar el margen inferior para alinear los títulos */
+}
+
+.nav-link .nav-item {
+    color: #dba3ba; /* Cambia #ff0000 al color que desees */
+}
+/*registro inicio*/
+.registro-container {
+    margin-bottom: 0;
+    font-family: 'Shadows Into Light', sans-serif;
+   
+    
+    min-height: 20vh;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    color: white;
+    margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+    text-align: center; /* Centra el contenido */
+   
+    position: relative; /* Agregado para posicionar el texto sobre la imagen */
+}
+.registro-container p{
+    font-size:15px;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+.registro-container strong{
+    font-size:25px;
+}
+/* Estilos para el texto */
+.registro-text {
+    font-size: 30px;
+    font-family: Verdana , sans-serif;
+    font-weight: bold;
+   
+
+
+}
+
+/* Estilos para el cuadro de entrada de registro */
+.registro-input {
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Ajustado el nivel de transparencia del borde */
+    background-color: hsla(0, 57%, 24%, 0.2); /* Fondo translúcido */
+    color: white;
+    padding: 28px;
+    width: 80%; /* Reducido el ancho del input */
+    margin: 0 auto; /* Centrado horizontalmente */
+    margin-bottom: 20px; /* Espaciado inferior */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para el botón de registro */
+.registro-btn {
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Ajustado el nivel de transparencia del borde */
+    background-color: hwb(327 88% 9% / 0.2); /* Fondo translúcido */
+    color: white;
+    padding: 15px 35px;
+    transition: all 0.3s ease;
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 25px;
+}
+
+.registro-btn:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Cambio de color al pasar el mouse */
+    border-color: rgba(255, 255, 255, 0.9); /* Cambio de color del borde al pasar el mouse */
+}
+
+
+
+/* Estilos del formulario */
+.formulario {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#formulario input {
+    border: 2px solid hwb(0 91% 7% / 0.5);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #333;
+    font-size: 16px;
+
+}
+
+.formulario label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.campo {
+    padding: 5px;
+    width: calc(100% - 12px);
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 30px;
+}
+#interes1 {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border :2px solid hwb(0 91% 7% / 0.5)
+    
+}
+
+.boton {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*titulo de contactanos*/
+.titulo-h1{
+    padding: 20px;
+    display: flex;
+    background-color:beige ;
+    font-size: 70px;
+    color:hsl(335, 44%, 75%);
+    justify-content: center;
+    align-items: center;
+
+
+}
+.titulo-h1 h1{
+    display: flex;
+    align-items: center;
+}
+.titulo-h1 i {
+    margin-right: 10px;
+    font-size: 36px;
+    color:white
+}  
+
+.texto-adicional {
+    text-align: center;
+    margin-top: auto;
+    
+}
+
+.texto-adicional p {
+    font-size: 18px;
+    color: white; /* Por defecto, el texto será blanco */
+    margin-bottom: 10px; /* Agregamos un espacio entre los párrafos */
+}
+
+.texto-adicional .rosa {
+    color:white; /* Color rosa para el primer párrafo */
+    font-size: 40px; /* Tamaño de letra más grande para el primer párrafo */
+    font-weight: bold;
+
+}
+
+
+.formulario {
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin: 50px auto; /* Centra el formulario horizontalmente */
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  .formulario input,
+  .formulario textarea {
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #333;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .formulario label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .campo {
+    margin-bottom: 20px;
+  }
+  
+  #mensaje {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  .boton-contacto {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  /*calñculadora de tallas*/
+  .talla-calculadora-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .talla-calculadora {
+    background-color: #eeececb3;
+    padding: 100px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .talla-calculadora h2 {
+    font-size: 28px;
+    color:rgb(105, 87, 101);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 40px;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .talla-calculadora label {
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 18px;
+  }
+  
+  .talla-calculadora input {
+    padding: 12px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 300px;
+    font-size: 20px;
+    color:#ccc
+  }
+  
+  .boton-rosa {
+    padding: 12px 24px;
+    margin: 10px;
+    background-color: #ffb6c1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  
+  #resultado {
+    margin-top: 20px;
+    color: #3d3c3d;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .navegacion__fotos {
+    background-size: cover;
+    background-position: center;
+    height: 405px; /* Altura deseada del contenedor */
+    overflow: hidden;
+}
+
+.imagen-especial {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;   
+}
+
+  .titulo {
+    font-size: 24px; /* Tamaño de la fuente */
+    color: #dba3ba; /* Color del texto (en este caso, rojo) */
+}
+
+.my-popup-class {
+    font-size: 12px;
+}
+.errores {
+    text-align: center;
+    margin-top: 40px;
+    width: 400px;
+    color: red;
+    font-size: 14px; /* Para ocultar los mensajes de error inicialmente */
+}
+
+/*enlace de galeria para calcular tallas */
+.btn-primary {
+    background-color:white ;
+    color:#dba3ba;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #c789a9;
+}
+
+.btn-primary i {
+    margin-right: 10px;
+}
+.enlace-container {
+    margin-top: 50px; /* Ajusta el valor según la separación deseada */
+}
+.botonN {
+    background-color: #ffb6c1;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+}
+h1.generador{
+    font-size: 20px; 
+    margin-bottom: 20px;
+    color: white;
+}
+#nombreC {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+  }
+  .mapaMetro {
+    margin-left: 70px;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+  }
+  h1.metro{
+    font-size: 40px; 
+    margin-bottom: 20px;
+    color: white;
+}

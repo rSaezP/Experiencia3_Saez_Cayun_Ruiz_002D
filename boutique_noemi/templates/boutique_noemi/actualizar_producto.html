@@ -1,0 +1,42 @@
+
+{% block content %}
+<h1>Actualizar Producto</h1>
+<form method="post" enctype="multipart/form-data" id="producto-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+
+<script>
+// Validación con JavaScript puro
+document.getElementById('producto-form').addEventListener('submit', function(e) {
+    var codigo = document.getElementById('id_codigo').value;
+    var nombre = document.getElementById('id_nombre').value;
+    var precio = document.getElementById('id_precio').value;
+    var stock = document.getElementById('id_stock').value;
+
+    if (codigo == '' || nombre == '' || precio == '' || stock == '') {
+        e.preventDefault();
+        alert('Por favor, rellene todos los campos obligatorios.');
+    }
+});
+</script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Validación con jQuery
+$(document).ready(function() {
+    $('#producto-form').submit(function(e) {
+        var codigo = $('#id_codigo').val();
+        var nombre = $('#id_nombre').val();
+        var precio = $('#id_precio').val();
+        var stock = $('#id_stock').val();
+
+        if (codigo == '' || nombre == '' || precio == '' || stock == '') {
+            e.preventDefault();
+            alert('Por favor, rellene todos los campos obligatorios.');
+        }
+    });
+});
+</script>
+{% endblock %}

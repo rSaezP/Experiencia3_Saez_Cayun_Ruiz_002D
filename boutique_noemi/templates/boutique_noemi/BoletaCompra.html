@@ -1,0 +1,8 @@
+{% block content %}
+<h2>Boleta de Compra</h2>
+<p>Fecha: {{ boleta.fecha_compra }}</p>
+{% for detalle in boleta.detalles.all %}
+    <p>{{ detalle.producto.nombre }} - Cantidad: {{ detalle.cantidad }} - Precio: ${{ detalle.precio_total }}</p>
+{% endfor %}
+<p>Total: ${{ boleta.total }}</p>
+{% endblock %}

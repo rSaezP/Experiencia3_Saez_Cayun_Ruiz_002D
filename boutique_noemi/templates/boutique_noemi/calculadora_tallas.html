@@ -1,0 +1,162 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Registro</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="{% static 'css/stylos.css' %}" />
+  <script src="js/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap" rel="stylesheet" />
+  
+  <!--link para los iconos de las redes sociales-->
+  <link rel="icon" href="imagenes/BN.ico" type="image/jpg" />
+  
+  <link rel="stylesheet" href="css/stylos.css">
+ 
+  <!--para la fuente de google-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!--link para los iconos de las redes sociales-->
+
+  
+
+</head>
+
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <!-- Título como logo -->
+        <a class="navbar-brand">
+          <div class="titulo">
+            <h1 class="titulo__texto">&#x2665; Boutique Noemi &#x2665;</h1>
+          </div>
+        </a>
+        <!-- Botón de menú colapsable para dispositivos pequeños -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Menú de navegación -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active navegacion__item">
+              <a class="nav-link navegacion__enlace" style="color: pink" href="inicio.html">Inicio</a>
+            </li>
+            <li class="nav-item navegacion__item">
+              <a class="nav-link navegacion__enlace" style="color: pink" href="quienes_somos.html">Quiénes Somos</a>
+            </li>
+            <li class="nav-item navegacion__item">
+              <a class="nav-link navegacion__enlace" style="color: pink" href="galeria.html">Galería de Fotos</a>
+            </li>
+            <li class="nav-item navegacion__item">
+              <a class="nav-link navegacion__enlace" href="contacto.html">
+                  <i class="fas fa-comment-dots"></i> Contáctanos
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="talla-calculadora-container">
+    <div class="talla-calculadora">
+      <h2>Calculadora de Tallas</h2>
+      <div class="input-group">
+        <label for="edad">Edad del niño (meses):</label>
+        <input type="number" id="edad" placeholder="Edad en meses">
+      </div>
+      <div class="input-group">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" placeholder="Peso en kilogramos">
+      </div>
+      <button class="boton-rosa" onclick="calcularTalla()">Calcular Talla</button>
+      <div id="resultado"></div>
+    </div>
+  </div>
+
+  <div class="container center mx-auto">
+    <h1 class="generador">Generador de Nombres de Bebé</h1>
+    <button  id="generarN" class="botonN">Generar Nombre</button>
+    <div id="nombreC"></div>
+</div>
+
+  <script>
+    var gender = 'neutral';
+    $(document).ready(function() {
+        $('#generarN').click(function() {
+            $.ajax({
+                method: 'GET',
+                url: 'https://api.api-ninjas.com/v1/babynames?gender=' + gender,
+                headers: { 'X-Api-Key': 'oBE3pCo/HWDmkLqZOqaVkA==3diI3qSKptV3qczQ'},
+                contentType: 'application/json',
+                success: function(result) {
+                  $('#nombreC').text(result);
+                },
+                error: function ajaxError(jqXHR) {
+                    console.error('Error: ', jqXHR.responseText);
+                    $('#nombreC').text('Ocurrió un error al obtener el nombre.');
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+<div class="registro-container">
+  <div class="registro-background-overlay"></div>
+  <p class="registro-text">Conoce nuestras novedades</p>
+  <p>
+    <strong>REGÍSTRATE Y OBTÉN UN 10% DCTO</strong>
+  </p>
+
+  <a href="suscribir.html" class="btn btn-primary registro-btn">REGISTRARME</a>
+  <p>
+    Al registrarte vía mail, aceptas recibir nuestros correos electrónicos
+    de marketing automatizados. Este consentimiento es condición para
+    cualquier compra. Ver <a href="#">Términos y Condiciones</a>.
+  </p>
+</div>
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <p class="footer-text">
+          Integrantes : Romina Saez - Nicolas Cayun - Hugo Ruiz
+        </p>
+        <p class="footer-text">Correo : boutique_noemi@gmail.com</p>
+        <p class="footer-text">Contacto: +56978720141</p>
+      </div>
+
+      <div class="col- lg-6 d-flex justify-content-end- align-items-center">
+        <div class="social-icons">
+
+          <a href="https://www.instagram.com/boutique_noemi_/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=100054420355897&mibextid=LQQJ4d" target="_blank"><i
+              class="fab fa-facebook"></i></a>
+        </div>
+        <p class="footer-text mb-0 mr-3">
+          © 2024 Boutique Noemi. Todos los derechos reservados.
+        </p>
+      
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+
+</html>

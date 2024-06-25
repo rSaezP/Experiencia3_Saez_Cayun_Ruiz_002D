@@ -1,0 +1,55 @@
+
+{% block content %}
+<main class="container mt-5 pt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title text-center mb-4">Carrito de Compras</h2>
+                    {% if productos %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Cantidad</th>
+                                    <th>Precio</th>
+                                    <th>Total</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in productos %}
+                                <tr>
+                                    <td>{{ item.producto.nombre }}</td>
+                                    <td>
+                                        <form action="{% url 'cambiar_cantidad_carrito' item.producto.id %}" method="post" class="d-flex">
+                                            {% csrf_token %}
+                                            <input type="number" name="cantidad" value="{{ item.cantidad }}" min="1" class="form-control me-2" style="width: 70px">
+                                            <button type="submit" class="btn btn-sm btn-primary">Actualizar</button>
+                                        </form>
+                                    </td>
+                                    <td>${{ item.producto.precio }}</td>
+                                    <td>${{ item.total }}</td>
+                                    <td>
+                                        <form action="{% url 'eliminar_producto_carrito' item.producto.id %}" method="post">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-sm btn-danger">Eliminar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <p class="text-end fw-bold">Total: ${{ total }}</p>
+                        <div class="d-grid">
+                            <a href="{% url 'realizar_compra' %}" class="btn btn-primary">Realizar Compra</a>
+                        </div>
+                    {% else %}
+                        <p class="text-center">Tu carrito está vacío.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

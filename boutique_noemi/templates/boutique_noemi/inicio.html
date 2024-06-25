@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--permite que el sitio web se vea bien en todos los navegadores-->
+    <meta name="description" content="Boutique Noemi" />
+    <title>inicio - Boutique Noemi</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="{% static '/css/stylos.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <!--para la fuente de google-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!--link para los iconos de las redes sociales-->
+    <link rel="icon" href="{% static '/img/BN.ico' %}" type="image/jpg" />
+    <script type="text/javascript" src="jquery-1.7.1min.js"></script>
+    <!--link para la letra del link al video-->
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <!-- Título como logo -->
+          <a class="navbar-brand" >
+            <div class="titulo">
+              <h1 class="titulo__texto">&#x2665; Boutique Noemi &#x2665;</h1>
+            </div>
+          </a>
+          <!-- Botón de menú colapsable para dispositivos pequeños -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Menú de navegación -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active navegacion__item">
+                <a
+                  class="nav-link navegacion__enlace"
+                  style="color: pink"
+                  href="{% url 'inicio' %}"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item navegacion__item">
+                <a
+                  class="nav-link navegacion__enlace"
+                  style="color: pink"
+                  href="{% url 'quienes_somos' %}"
+                  >Quiénes Somos</a
+                >
+              </li>
+              <li class="nav-item navegacion__item">
+                <a
+                  class="nav-link navegacion__enlace"
+                  style="color: pink"
+                  href="{% url 'galeria' %}"
+                  >Galería de Fotos</a
+                >
+              </li>
+              <li class="nav-item navegacion__item">
+                <a class="nav-link navegacion__enlace" href="{% url 'contacto' %}">
+                    <i class="fas fa-comment-dots"></i> Contáctanos
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="centrar" style="padding-top: 2cm">
+      <div>
+        <h1 class="titulo__texto" style="color: white">
+          Bienvenidos a Boutique Noemí
+        </h1>
+        <p class="texto">
+          En Boutique Noemí nos especializamos en ofrecer la mejor moda infantil
+          para tus pequeños. Con una amplia selección de prendas de vestir que
+          combinan estilo, comodidad y calidad, nos esforzamos por vestir a los
+          niños con prendas que reflejen su alegría y personalidad.
+        </p>
+        <p class="texto">
+          Desde los conjuntos más elegantes para ocasiones especiales hasta la
+          ropa cómoda y práctica para el día a día, nuestra tienda cuenta con
+          todo lo que necesitas para vestir a tus hijos con estilo. Trabajamos
+          con marcas reconocidas por su calidad y diseño, garantizando que cada
+          prenda sea duradera y esté a la moda.
+        </p>
+      </div>
+    </div>
+
+    <div class="carrusel-central" style="padding-top: 2cm">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="{% static '/img/completo2.jpg' %}"
+              alt="First slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="{% static '/img/completito.jpg' %}"
+              alt="Second slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="{% static '/img/completo3.jpg' %}"
+              alt="Third slide"
+            />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="container col-md-4">
+<iframe class="mapaMetro center mx-auto"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212892.5225955021!2d-70.9070310222178!3d-33.51579673755018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c6401fb9df41%3A0x39ed97ac1c7b9867!2sVespucio%20Norte!5e0!3m2!1ses!2scl!4v1715796826342!5m2!1ses!2scl"
+    width="300" height="200">
+</iframe>
+
+<h1 class="metro"><strong>ENTREGAS PRESENCIALES</strong></h1>
+
+
+
+    </div>
+    <div class="registro-container">
+      <div class="registro-background-overlay"></div>
+      <p class="registro-text">Conoce nuestras novedades</p>
+      <p >
+        <strong>REGÍSTRATE Y OBTÉN UN 10% DCTO</strong>
+      </p>
+
+      <a href="{% url 'suscribir' %}" class="btn btn-primary registro-btn"
+        >REGISTRARME</a
+      >
+      <p>
+        Al registrarte vía mail, aceptas recibir nuestros correos electrónicos
+        de marketing automatizados. Este consentimiento es condición para
+        cualquier compra. Ver <a href="#">Términos y Condiciones</a>.
+      </p>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="footer-text">
+              Integrantes : Romina Saez - Nicolas Cayun - Hugo Ruiz
+            </p>
+            <p class="footer-text">Correo : boutique_noemi@gmail.com</p>
+            <p class="footer-text">Contacto: +56978720141</p>
+          </div>
+
+          <div class="col- lg-6 d-flex justify-content-end- align-items-center">
+            <div class="social-icons">
+              <a
+                href="https://www.instagram.com/boutique_noemi_/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/profile.php?id=100054420355897&mibextid=LQQJ4d"
+                target="_blank"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </div>
+            <p class="footer-text mb-0 mr-3">
+              © 2024 Boutique Noemi. Todos los derechos reservados.
+            </p>
+           
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
